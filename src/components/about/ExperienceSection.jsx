@@ -20,7 +20,7 @@ const experiences = [
     id: 3,
     title: 'Date Night Vibes',
     time: '🌙',
-    image: 'https://images.lifestyleasia.com/wp-content/uploads/sites/7/2025/09/25193025/best-date-night-places-in-bangalore-1.jpg',
+    image: 'https://tse4.mm.bing.net/th/id/OIP.WflWwAGUoC4Ri8-PLvJkOgHaHa?pid=ImgDet&w=192&h=192&c=7&dpr=1.7&o=7&rm=3',
     desc: 'Dim lighting, soft whispers, and romantic corners. Make memories over candlelight and our finest brews.'
   }
 ];
