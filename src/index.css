@@ -4,16 +4,20 @@
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
   
-  /* Coffee Theme Colors */
-  --color-coffee-dark: #1C0E07;      /* Espresso */
-  --color-coffee-mocha: #4B2E2B;     /* Mocha */
-  --color-coffee-caramel: #8D5B39;   /* Caramel */
-  --color-coffee-beige: #D9C5B2;     /* Beige */
-  --color-coffee-cream: #FFF8F0;     /* Cream */
+  /* Dynamic Coffee Theme Colors */
+  --color-coffee-dark: var(--bg-primary);      
+  --color-coffee-mocha: var(--card-bg);     
+  --color-coffee-caramel: #8D5B39;   /* Static Accent */
+  --color-coffee-beige: var(--border-color);     
+  --color-coffee-cream: var(--text-primary); 
+  
+  /* Fallback names for legacy usage */
+  --color-bg-base: var(--bg-primary);
+  --color-text-base: var(--text-primary);
 }
 
 /* Theme-specific variables */
-:root.light {
+:root {
   --bg-primary: #FFF8F0;
   --text-primary: #1C0E07;
   --card-bg: #FFFFFF;
@@ -28,7 +32,9 @@
 }
 
 body {
-  @apply font-body bg-coffee-cream text-coffee-dark selection:bg-coffee-caramel selection:text-coffee-cream;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  @apply font-body transition-colors duration-500 selection:bg-coffee-caramel selection:text-white;
   scroll-behavior: smooth;
 }
 
