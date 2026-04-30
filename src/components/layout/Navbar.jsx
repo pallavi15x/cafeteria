@@ -49,7 +49,7 @@ const Navbar = () => {
             <span className="text-coffee-cream font-bold">☕</span>
           </div>
           <span className={`text-xl font-heading font-bold tracking-tight transition-colors duration-300 ${
-            isScrolled ? 'text-coffee-cream' : 'text-coffee-dark'
+            isScrolled ? 'text-coffee-cream' : 'text-white'
           }`}>
             Velvet Brew
           </span>
@@ -62,7 +62,7 @@ const Navbar = () => {
               key={link.name}
               to={link.path}
               className={`nav-link text-sm font-medium tracking-wide transition-colors duration-300 ${
-                isScrolled ? 'text-coffee-cream/90' : 'text-coffee-dark/90'
+                isScrolled ? 'text-coffee-cream/90' : 'text-white/90'
               } ${location.pathname === link.path ? 'opacity-100 font-bold border-b-2 border-coffee-caramel' : ''}`}
             >
               {link.name}
@@ -75,7 +75,7 @@ const Navbar = () => {
 
             {/* Favorites Icon */}
             <Link to="/menu" className="relative p-2 group" title="Your Favorites">
-              <span className={`text-xl transition-transform group-hover:scale-125 inline-block ${isScrolled ? 'text-coffee-cream' : 'text-coffee-dark'}`}>
+              <span className={`text-xl transition-transform group-hover:scale-125 inline-block ${isScrolled ? 'text-coffee-cream' : 'text-white'}`}>
                 {favorites.length > 0 ? '❤️' : '🤍'}
               </span>
               {favorites.length > 0 && (
@@ -89,7 +89,7 @@ const Navbar = () => {
             <Link to="/cart" className="relative p-2 group">
               <span 
                 className={`transition-colors duration-300 ${
-                  isScrolled ? 'text-coffee-cream' : 'text-coffee-dark'
+                  isScrolled ? 'text-coffee-cream' : 'text-white'
                 } group-hover:text-coffee-caramel font-bold text-sm`} 
               >Cart</span>
               {itemCount > 0 && (
@@ -105,7 +105,7 @@ const Navbar = () => {
         <div className="flex lg:hidden items-center gap-4">
           <ThemeToggle />
           <Link to="/cart" className="relative p-2">
-            <span className={`text-xl ${isScrolled ? 'text-coffee-cream' : 'text-coffee-dark'}`}>🛒</span>
+            <span className={`text-xl ${isScrolled ? 'text-coffee-cream' : 'text-white'}`}>🛒</span>
             {itemCount > 0 && (
               <span className="absolute -top-1 -right-1 bg-coffee-caramel text-coffee-cream text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full">
                 {itemCount}
@@ -115,7 +115,7 @@ const Navbar = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`p-2 transition-colors duration-300 ${
-              isScrolled ? 'text-coffee-cream' : 'text-coffee-dark'
+              isScrolled ? 'text-coffee-cream' : 'text-white'
             }`}
           >
             {isMobileMenuOpen ? <span className="font-bold">×</span> : <span className="font-bold">☰</span>}
