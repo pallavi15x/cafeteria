@@ -77,7 +77,7 @@ const galleryImages = [
   },
   {
     id: 'n3', vibe: 'night', emoji: '🌙', tall: false,
-    caption: 'Romantic corner, perfect date',
+    caption: 'Perfect corner, perfect date',
     src: 'https://res.cloudinary.com/purnesh/image/upload/w_1080,f_auto/restaurants-date-night.jpg'
   },
   {

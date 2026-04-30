@@ -21,7 +21,7 @@ const experiences = [
     title: 'Date Night Vibes',
     time: '🌙',
     image: 'https://tse4.mm.bing.net/th/id/OIP.WflWwAGUoC4Ri8-PLvJkOgHaHa?pid=ImgDet&w=192&h=192&c=7&dpr=1.7&o=7&rm=3',
-    desc: 'Dim lighting, soft whispers, and romantic corners. Make memories over candlelight and our finest brews.'
+    desc: 'Dim lighting, soft whispers. Make memories over candlelight and our finest brews.'
   }
 ];
 

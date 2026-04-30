@@ -5,7 +5,7 @@ const filters = [
   { id: 'all', label: 'All', emoji: '✨' },
   { id: 'day', label: 'Daylight', emoji: '☀️' },
   { id: 'evening', label: 'Evening', emoji: '🌆' },
-  { id: 'night', label: 'Date Night', emoji: '🌙' },
+  { id: 'night', label: 'Night Vibes', emoji: '🌙' },
 ];
 
 const GalleryFilter = ({ activeFilter, setActiveFilter }) => {
