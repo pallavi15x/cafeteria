@@ -48,138 +48,197 @@ const HeroSection = () => {
           </div>
         </motion.div>
 
-        {/* Animation Sequence - Storytelling version */}
-        <div className="relative flex justify-center items-center h-[500px]" style={{ perspective: "1000px" }}>
+        {/* Animation Sequence - Ultra Realistic Storytelling version */}
+        <div className="relative flex justify-center items-center h-[500px]" style={{ perspective: "1200px" }}>
           
-          {/* Stage 1: The Beans (Initial state) */}
-          <motion.div 
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ 
-              opacity: [0, 1, 0],
-              y: [0, 150]
-            }}
-            transition={{ duration: 1.5, times: [0, 0.2, 1], repeat: Infinity, repeatDelay: 10 }}
-            className="absolute z-30 flex gap-2"
-          >
-            <span className="text-4xl">🫘</span>
-            <span className="text-4xl">🫘</span>
-            <span className="text-4xl">🫘</span>
-          </motion.div>
+          {/* Advanced SVG Filters for Realism */}
+          <svg className="absolute w-0 h-0">
+            <defs>
+              {/* Liquid Slosh Filter */}
+              <filter id="liquid-wobble">
+                <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" seed="1">
+                  <animate attributeName="baseFrequency" dur="5s" values="0.02;0.03;0.02" repeatCount="indefinite" />
+                </feTurbulence>
+                <feDisplacementMap in="SourceGraphic" scale="5" />
+              </filter>
+              
+              {/* Coffee Texture */}
+              <linearGradient id="coffee-depth" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#3D2B1F" />
+                <stop offset="100%" stopColor="#1C0E07" />
+              </linearGradient>
+
+              {/* Cup Texture (Ceramic Look) */}
+              <linearGradient id="ceramic-shine" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#FFFFFF" />
+                <stop offset="40%" stopColor="#F5E6D3" />
+                <stop offset="100%" stopColor="#D9C5B2" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+          {/* Stage 1: The Beans (Realistic Physics) */}
+          <div className="absolute inset-0 z-30 pointer-events-none">
+            {[...Array(6)].map((_, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: -50, x: 80 + (i * 10), rotate: 0 }}
+                animate={{ 
+                  opacity: [0, 1, 0],
+                  y: [-50, 250],
+                  x: [80 + (i * 10), 70 + (i * 20)],
+                  rotate: [0, 360 * (i + 1)]
+                }}
+                transition={{ 
+                  duration: 2, 
+                  delay: i * 0.2, 
+                  repeat: Infinity, 
+                  repeatDelay: 8,
+                  ease: "circIn"
+                }}
+                className="absolute text-2xl"
+              >
+                🫘
+              </motion.div>
+            ))}
+          </div>
 
           {/* Main 3D Container */}
           <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
+            initial={{ scale: 0.9, opacity: 0, rotateY: -15 }}
             animate={{ 
-              scale: [0.8, 1, 1],
+              scale: 1, 
               opacity: 1,
-              y: [0, -10, 0] 
+              rotateY: 0,
+              y: [0, -12, 0] 
             }}
             transition={{ 
-              scale: { duration: 1, ease: "backOut" },
-              y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+              y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+              default: { duration: 1.5, ease: "easeOut" }
             }}
             className="relative z-10"
           >
-            <svg viewBox="0 0 200 250" className="w-72 h-96 drop-shadow-[0_35px_35px_rgba(0,0,0,0.4)]">
-              {/* Steam - Appear after serving */}
+            <svg viewBox="0 0 200 250" className="w-80 h-[400px] drop-shadow-[0_45px_40px_rgba(0,0,0,0.6)]">
+              {/* Realistic Steam Clouds */}
               <motion.g
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 4, duration: 1 }}
+                transition={{ delay: 4.5 }}
               >
-                {[1, 2, 3].map((i) => (
-                  <motion.path
+                {[...Array(5)].map((_, i) => (
+                  <motion.circle
                     key={i}
-                    animate={{ y: [0, -30], opacity: [0, 0.7, 0] }}
-                    transition={{ duration: 2.5, repeat: Infinity, delay: 4 + (i * 0.5) }}
-                    d={`M ${80 + (i * 20)} 60 Q ${90 + (i * 20)} 40, ${80 + (i * 20)} 10`}
-                    fill="transparent"
-                    stroke="#D9C5B2"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    className="blur-[1px]"
+                    r={10 + i * 2}
+                    fill="white"
+                    opacity="0"
+                    animate={{ 
+                      y: [100, 20],
+                      x: [90 + i * 5, 100 + (i % 2 === 0 ? 15 : -15)],
+                      opacity: [0, 0.2, 0],
+                      scale: [1, 2.5]
+                    }}
+                    transition={{ 
+                      duration: 4, 
+                      repeat: Infinity, 
+                      delay: 4 + (i * 0.7),
+                      ease: "easeOut"
+                    }}
+                    className="blur-xl"
                   />
                 ))}
               </motion.g>
 
+              {/* Cup Shadow (Inner) */}
+              <ellipse cx="100" cy="220" rx="65" ry="10" fill="rgba(0,0,0,0.3)" />
+
               {/* Cup Body */}
               <path
                 d="M 40 80 L 40 180 Q 40 220, 100 220 Q 160 220, 160 180 L 160 80 Z"
-                fill="#FFF8F0"
+                fill="url(#ceramic-shine)"
                 stroke="#2C1A12"
-                strokeWidth="4"
+                strokeWidth="2"
+              />
+              {/* Cup Handle (3D appearance) */}
+              <path
+                d="M 160 110 Q 205 110, 205 140 Q 205 170, 160 170"
+                fill="none"
+                stroke="url(#ceramic-shine)"
+                strokeWidth="12"
+                strokeLinecap="round"
+                className="drop-shadow-md"
               />
               <path
                 d="M 160 110 Q 200 110, 200 140 Q 200 170, 160 170"
-                fill="transparent"
-                stroke="#FFF8F0"
-                strokeWidth="10"
-                strokeLinecap="round"
+                fill="none"
+                stroke="#2C1A12"
+                strokeWidth="1"
               />
 
-              {/* Stage 2: Coffee Pouring */}
-              <motion.rect 
-                initial={{ height: 0, y: 175 }}
-                animate={{ height: 85, y: 90 }}
-                transition={{ delay: 1, duration: 2, ease: "easeInOut" }}
-                x="45" width="110"
-                fill="#2C1A12"
-                className="rounded-b-2xl"
-              />
-              {/* Mask for liquid rounded corners */}
-              <clipPath id="cupClip">
-                 <path d="M 45 90 L 45 175 Q 45 210, 100 210 Q 155 210, 155 175 L 155 90 Z" />
-              </clipPath>
-              <motion.path
-                initial={{ y: 200 }}
-                animate={{ y: 0 }}
-                transition={{ delay: 1, duration: 2 }}
-                d="M 45 90 L 45 175 Q 45 210, 100 210 Q 155 210, 155 175 L 155 90 Z"
-                fill="#2C1A12"
-                clipPath="url(#cupClip)"
-              />
-
-              {/* Stage 3: Milk Swirl & Latte Art */}
-              <motion.g
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 3, duration: 1, ease: "backOut" }}
-              >
-                {/* Outer Milk Swirl */}
-                <motion.path
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                  d="M 100 120 C 80 90, 60 120, 100 160 C 140 120, 120 90, 100 120 Z"
-                  fill="#C68B59"
-                  className="origin-center"
-                />
-                {/* Inner Heart */}
-                <motion.path
-                  animate={{ scale: [1, 1.1, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  d="M 100 130 C 90 115, 80 130, 100 150 C 120 130, 110 115, 100 130 Z"
-                  fill="#FFF8F0"
-                  className="origin-center"
+              {/* Coffee Liquid with Wobble Filter */}
+              <motion.g filter="url(#liquid-wobble)">
+                <motion.path 
+                  initial={{ scaleY: 0, originY: "180px" }}
+                  animate={{ scaleY: 1 }}
+                  transition={{ delay: 1.2, duration: 2.5, ease: "circOut" }}
+                  d="M 45 90 L 45 175 Q 45 210, 100 210 Q 155 210, 155 175 L 155 90 Z"
+                  fill="url(#coffee-depth)"
                 />
               </motion.g>
+
+              {/* Milk/Cream Blending Sequence */}
+              <motion.g
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 3.5, duration: 1.2, ease: "backOut" }}
+              >
+                {/* Crema Layer */}
+                <ellipse cx="100" cy="110" rx="52" ry="12" fill="#8D5B39" opacity="0.6" />
+                
+                {/* Animated Heart (Soft & Organic) */}
+                <motion.path
+                  animate={{ 
+                    scale: [1, 1.05, 1],
+                    filter: ["brightness(1)", "brightness(1.1)", "brightness(1)"]
+                  }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                  d="M 100 115 C 80 85, 60 115, 100 155 C 140 115, 120 85, 100 115 Z"
+                  fill="#FFF8F0"
+                  className="origin-center shadow-inner"
+                />
+              </motion.g>
+
+              {/* Cup Rim Glow */}
+              <path
+                d="M 40 82 Q 100 85, 160 82"
+                fill="none"
+                stroke="white"
+                strokeWidth="1"
+                opacity="0.3"
+              />
             </svg>
           </motion.div>
 
-          {/* Serve Stage: Final Reveal Text */}
+          {/* Floating Label */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: [0, 1, 0] }}
-            transition={{ delay: 4, duration: 2, times: [0, 0.5, 1] }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 bg-coffee-caramel text-white px-6 py-2 rounded-full font-bold shadow-2xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: [0, 1, 0], y: [20, 0, -20] }}
+            transition={{ delay: 4.8, duration: 3, times: [0, 0.2, 1] }}
+            className="absolute bottom-20 z-40 px-8 py-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl"
           >
-            Freshly Served ☕
+            <p className="text-white font-heading font-bold tracking-widest uppercase text-xs">
+              Handcrafted with Passion ✨
+            </p>
           </motion.div>
 
-          {/* Table Shadow */}
+          {/* Dynamic Table Shadow */}
           <motion.div 
-            animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
-            transition={{ duration: 4, repeat: Infinity }}
-            className="absolute bottom-10 w-48 h-8 bg-black/40 rounded-full blur-xl z-0"
+            animate={{ 
+              scale: [1, 1.2, 1], 
+              opacity: [0.2, 0.4, 0.2],
+              width: [180, 220, 180]
+            }}
+            transition={{ duration: 5, repeat: Infinity }}
+            className="absolute bottom-5 h-6 bg-black/50 rounded-[100%] blur-2xl z-0"
           />
         </div>
       </div>
