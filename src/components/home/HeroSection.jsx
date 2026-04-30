@@ -77,30 +77,33 @@ const HeroSection = () => {
             </defs>
           </svg>
 
-          {/* Stage 1: The Beans (Realistic Physics) */}
-          <div className="absolute inset-0 z-30 pointer-events-none">
-            {[...Array(6)].map((_, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: -50, x: 80 + (i * 10), rotate: 0 }}
-                animate={{ 
-                  opacity: [0, 1, 0],
-                  y: [-50, 250],
-                  x: [80 + (i * 10), 70 + (i * 20)],
-                  rotate: [0, 360 * (i + 1)]
-                }}
-                transition={{ 
-                  duration: 2, 
-                  delay: i * 0.2, 
-                  repeat: Infinity, 
-                  repeatDelay: 8,
-                  ease: "circIn"
-                }}
-                className="absolute text-2xl"
-              >
-                🫘
-              </motion.div>
-            ))}
+          {/* Stage 1: The Beans (Fixed to fall INTO the cup) */}
+          <div className="absolute inset-0 z-30 pointer-events-none flex justify-center">
+            <div className="relative w-80 h-[400px]">
+              {[...Array(6)].map((_, i) => (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, y: -50, x: 85 + (i * 5), rotate: 0 }}
+                  animate={{ 
+                    opacity: [0, 1, 0],
+                    y: [-50, 150], // Falls exactly into the cup area
+                    x: [85 + (i * 5), 100], // Converges to the center
+                    rotate: [0, 360 * (i + 1)],
+                    scale: [1, 0.8]
+                  }}
+                  transition={{ 
+                    duration: 1.5, 
+                    delay: i * 0.2, 
+                    repeat: Infinity, 
+                    repeatDelay: 8,
+                    ease: "circIn"
+                  }}
+                  className="absolute text-xl"
+                >
+                  🫘
+                </motion.div>
+              ))}
+            </div>
           </div>
 
           {/* Main 3D Container */}
