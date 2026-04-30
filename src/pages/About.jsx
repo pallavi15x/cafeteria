@@ -68,7 +68,6 @@ const About = () => {
       <StorySection />
       <ValuesSection />
       <ExperienceSection />
-      <TeamSection />
 
       {/* Final CTA */}
       <section className="py-20 bg-coffee-cream text-center">
