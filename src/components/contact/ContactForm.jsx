@@ -31,7 +31,7 @@ const ContactForm = () => {
               <input
                 required
                 type="text"
-                placeholder="John Doe"
+                placeholder="Name"
                 className="w-full px-6 py-4 rounded-2xl bg-coffee-beige/10 border border-coffee-beige/30 focus:border-coffee-caramel focus:ring-1 focus:ring-coffee-caramel outline-none transition-all duration-300"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -42,7 +42,7 @@ const ContactForm = () => {
               <input
                 required
                 type="email"
-                placeholder="john@example.com"
+                placeholder="example@gmail.com"
                 className="w-full px-6 py-4 rounded-2xl bg-coffee-beige/10 border border-coffee-beige/30 focus:border-coffee-caramel focus:ring-1 focus:ring-coffee-caramel outline-none transition-all duration-300"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}

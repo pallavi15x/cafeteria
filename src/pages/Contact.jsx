@@ -55,13 +55,12 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             
-            {/* Left Side: Info & Map */}
+            {/* Left Side: Info */}
             <div className="space-y-12">
               <div>
                 <h2 className="text-3xl font-heading font-bold text-coffee-dark mb-8">Reach Out</h2>
                 <ContactInfo />
               </div>
-              <MapSection />
             </div>
 
             {/* Right Side: Form */}
