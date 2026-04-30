@@ -20,14 +20,14 @@ const MenuCard = ({ item, onClick }) => {
       variants={fadeUpVariant}
       whileHover={{ y: -8 }}
       onClick={onClick}
-      className="bg-white rounded-2xl shadow-glass overflow-hidden group transition-all duration-300 cursor-pointer border border-coffee-beige/30 hover:shadow-xl hover:border-coffee-caramel/50 flex flex-col h-full relative"
+      className="bg-coffee-mocha/20 dark:bg-coffee-mocha/40 rounded-2xl shadow-glass overflow-hidden group transition-all duration-300 cursor-pointer border border-coffee-beige/30 hover:shadow-xl hover:border-coffee-caramel/50 flex flex-col h-full relative"
     >
       {/* Favorite Button */}
       <motion.button
         whileHover={{ scale: 1.2 }}
         whileTap={{ scale: 0.8 }}
         onClick={handleFavoriteClick}
-        className="absolute top-4 left-4 z-30 p-2 bg-white/80 backdrop-blur-md rounded-full shadow-sm text-xl flex items-center justify-center transition-colors"
+        className="absolute top-4 left-4 z-30 p-2 bg-coffee-dark/80 backdrop-blur-md rounded-full shadow-sm text-xl flex items-center justify-center transition-colors"
       >
         <span className={isFavorite(item.id) ? "text-red-500" : "text-coffee-mocha/40"}>
           {isFavorite(item.id) ? '❤️' : '🤍'}
@@ -42,16 +42,16 @@ const MenuCard = ({ item, onClick }) => {
           loading="lazy"
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
-        <div className="absolute top-4 right-4 z-20 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-bold text-coffee-dark shadow-sm">
+        <div className="absolute top-4 right-4 z-20 bg-coffee-caramel px-3 py-1 rounded-full text-sm font-bold text-coffee-cream shadow-sm">
           ${item.price.toFixed(2)}
         </div>
       </div>
       
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-xl font-heading font-bold mb-2 text-coffee-dark group-hover:text-coffee-caramel transition-colors">
+        <h3 className="text-xl font-heading font-bold mb-2 text-coffee-cream group-hover:text-coffee-caramel transition-colors">
           {item.name}
         </h3>
-        <p className="text-sm text-coffee-mocha mb-4 flex-grow line-clamp-2">
+        <p className="text-sm text-coffee-beige/80 mb-4 flex-grow line-clamp-2">
           {item.description}
         </p>
         

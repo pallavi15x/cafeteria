@@ -11,7 +11,7 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-24 bg-coffee-beige text-coffee-dark">
+    <section className="py-24 bg-coffee-mocha/20 dark:bg-coffee-dark/80 text-coffee-cream">
       <div className="container mx-auto px-6">
         <motion.div 
           initial="hidden"
@@ -21,7 +21,7 @@ const WhyChooseUs = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">Why Choose Velvet Brew?</h2>
-          <p className="text-coffee-mocha max-w-2xl mx-auto">We believe coffee is more than just a drink; it's an experience.</p>
+          <p className="text-coffee-beige/80 max-w-2xl mx-auto">We believe coffee is more than just a drink; it's an experience.</p>
         </motion.div>
 
         <motion.div 
@@ -36,13 +36,13 @@ const WhyChooseUs = () => {
               key={feature.id}
               variants={fadeUpVariant}
               whileHover={{ y: -5 }}
-              className="bg-coffee-cream rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition-all duration-300 border border-coffee-caramel/10"
+              className="bg-coffee-mocha/30 dark:bg-coffee-mocha/50 rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition-all duration-300 border border-coffee-caramel/10"
             >
               <div className="text-5xl mb-6 bg-coffee-beige w-20 h-20 mx-auto rounded-full flex items-center justify-center shadow-inner">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-heading font-bold mb-3 text-coffee-dark">{feature.title}</h3>
-              <p className="text-coffee-mocha text-sm leading-relaxed">{feature.description}</p>
+              <h3 className="text-xl font-heading font-bold mb-3 text-coffee-cream">{feature.title}</h3>
+              <p className="text-coffee-beige/70 text-sm leading-relaxed">{feature.description}</p>
             </motion.div>
           ))}
         </motion.div>

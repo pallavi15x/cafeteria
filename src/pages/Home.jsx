@@ -12,7 +12,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-coffee-cream">
+    <div className="bg-coffee-dark dark:bg-coffee-dark text-coffee-cream">
       <HeroSection />
       <FeaturedCoffee />
       <WhyChooseUs />

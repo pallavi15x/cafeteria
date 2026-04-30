@@ -31,7 +31,7 @@ const FeaturedCoffee = () => {
   };
 
   return (
-    <section className="py-24 bg-coffee-cream text-coffee-dark">
+    <section className="py-24 bg-coffee-dark dark:bg-coffee-dark text-coffee-cream">
       <div className="container mx-auto px-6">
         <motion.div 
           initial="hidden"
@@ -56,7 +56,7 @@ const FeaturedCoffee = () => {
               key={item.id}
               variants={fadeUpVariant}
               whileHover={{ y: -10 }}
-              className="bg-white rounded-2xl shadow-glass overflow-hidden group transition-all duration-300"
+              className="bg-coffee-mocha/20 dark:bg-coffee-mocha/40 rounded-2xl shadow-glass overflow-hidden group transition-all duration-300"
             >
               <div className="h-48 overflow-hidden bg-coffee-beige">
                 <img 
@@ -67,8 +67,8 @@ const FeaturedCoffee = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-heading font-bold mb-2 text-coffee-dark">{item.name}</h3>
-                <p className="text-sm text-coffee-mocha mb-4 h-10">{item.description}</p>
+                <h3 className="text-xl font-heading font-bold mb-2 text-coffee-cream">{item.name}</h3>
+                <p className="text-sm text-coffee-beige/80 mb-4 h-10">{item.description}</p>
                 <div className="flex justify-between items-center mt-4">
                   <span className="text-lg font-bold text-coffee-caramel">${item.price.toFixed(2)}</span>
                   <button 

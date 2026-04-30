@@ -45,13 +45,13 @@ const MenuPage = () => {
   }, [selectedItem]);
 
   return (
-    <div className="min-h-screen bg-coffee-cream pt-32 pb-24">
+    <div className="min-h-screen bg-coffee-dark dark:bg-coffee-dark pt-32 pb-24 text-coffee-cream">
       <div className="container mx-auto px-6">
         
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl font-heading font-bold text-coffee-dark mb-4">Our Menu</h1>
-          <p className="text-lg text-coffee-mocha max-w-2xl mx-auto">
+          <h1 className="text-5xl md:text-6xl font-heading font-bold text-coffee-cream mb-4">Our Menu</h1>
+          <p className="text-lg text-coffee-beige/80 max-w-2xl mx-auto">
             Discover your perfect cup. From bold espressos to sweet treats, everything is crafted with passion.
           </p>
         </div>
@@ -83,7 +83,7 @@ const MenuPage = () => {
         ) : (
           <div className="text-center py-20">
             <span className="text-6xl mb-4 block opacity-50">🫗</span>
-            <h3 className="text-2xl font-heading font-bold text-coffee-dark mb-2">No items found</h3>
+            <h3 className="text-2xl font-heading font-bold text-coffee-cream mb-2">No items found</h3>
             <p className="text-coffee-mocha">We couldn't find anything matching your search. Try a different term!</p>
             <button 
               onClick={() => {setSearchQuery(''); setActiveCategory('All');}}
