@@ -41,7 +41,7 @@ const galleryImages = [
   {
     id: 'e1', vibe: 'evening', emoji: '🌆', tall: false,
     caption: 'Golden hour at Velvet Brew',
-    src: 'https://images.pexels.com/photos/1307698/pexels-photo-1307698.jpeg?auto=compress&cs=tinysrgb&w=800'
+    src: 'https://tse3.mm.bing.net/th/id/OIP.Kt0mO6wVMyNyvOZv5r-VQQAAAA?pid=ImgDet&w=192&h=254&c=7&dpr=1.7&o=7&rm=3'
   },
   {
     id: 'e2', vibe: 'evening', emoji: '🌆', tall: true,
