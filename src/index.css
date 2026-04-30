@@ -4,6 +4,7 @@
   --bg: #fff;
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
+
   --accent: #aa3bff;
   --accent-bg: rgba(170, 59, 255, 0.1);
   --accent-border: rgba(170, 59, 255, 0.5);
@@ -14,6 +15,7 @@
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
+
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
@@ -29,6 +31,7 @@
     font-size: 16px;
   }
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -102,7 +105,6 @@ code,
   border-radius: 4px;
   color: var(--text-h);
 }
-
 code {
   font-size: 15px;
   line-height: 135%;
