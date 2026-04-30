@@ -1,0 +1,1 @@
+const s="/cafeteria/assets/espresso-CI84iH_A.png",a="/cafeteria/assets/latte-XXOMQH3M.png",e="/cafeteria/assets/cappuccino-DTWo9fAP.png",c="/cafeteria/assets/mocha-BKnqEhCs.png";export{e as c,s as e,a as l,c as m};
