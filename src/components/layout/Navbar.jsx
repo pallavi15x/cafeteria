@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCart } from '../../context/CartContext';
+import { useFavorites } from '../../context/FavoritesContext';
 import { mobileMenuVariants, navItemVariants } from '../../animations/variants';
+import ThemeToggle from '../common/ThemeToggle';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { itemCount } = useCart();
+  const { favorites } = useFavorites();
   const location = useLocation();
 
   const navLinks = [
@@ -35,7 +38,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         isScrolled 
-          ? 'bg-coffee-dark/90 backdrop-blur-md py-3 shadow-glass' 
+          ? 'bg-coffee-dark/95 backdrop-blur-md py-3 shadow-glass' 
           : 'bg-transparent py-6'
       }`}
     >
@@ -48,48 +51,66 @@ const Navbar = () => {
           <span className={`text-xl font-heading font-bold tracking-tight transition-colors duration-300 ${
             isScrolled ? 'text-coffee-cream' : 'text-coffee-dark'
           }`}>
-            Velvet Brew Café
+            Velvet Brew
           </span>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.path}
               className={`nav-link text-sm font-medium tracking-wide transition-colors duration-300 ${
                 isScrolled ? 'text-coffee-cream/90' : 'text-coffee-dark/90'
-              }`}
+              } ${location.pathname === link.path ? 'opacity-100 font-bold border-b-2 border-coffee-caramel' : ''}`}
             >
               {link.name}
             </Link>
           ))}
           
-          {/* Cart Icon */}
-          <Link to="/cart" className="relative p-2 group">
-            <span 
-              className={`transition-colors duration-300 ${
-                isScrolled ? 'text-coffee-cream' : 'text-coffee-dark'
-              } group-hover:text-coffee-caramel font-bold`} 
-            >Cart</span>
-            {itemCount >= 0 && (
-              <span className="absolute -top-1 -right-1 bg-coffee-caramel text-coffee-cream text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-coffee-dark">
-                {itemCount}
+          <div className="flex items-center gap-6 pl-4 border-l border-coffee-beige/20">
+            {/* Theme Toggle */}
+            <ThemeToggle />
+
+            {/* Favorites Icon */}
+            <Link to="/menu" className="relative p-2 group" title="Your Favorites">
+              <span className={`text-xl transition-transform group-hover:scale-125 inline-block ${isScrolled ? 'text-coffee-cream' : 'text-coffee-dark'}`}>
+                {favorites.length > 0 ? '❤️' : '🤍'}
               </span>
-            )}
-          </Link>
+              {favorites.length > 0 && (
+                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
+                  {favorites.length}
+                </span>
+              )}
+            </Link>
+            
+            {/* Cart Icon */}
+            <Link to="/cart" className="relative p-2 group">
+              <span 
+                className={`transition-colors duration-300 ${
+                  isScrolled ? 'text-coffee-cream' : 'text-coffee-dark'
+                } group-hover:text-coffee-caramel font-bold text-sm`} 
+              >Cart</span>
+              {itemCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-coffee-caramel text-coffee-cream text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-coffee-dark">
+                  {itemCount}
+                </span>
+              )}
+            </Link>
+          </div>
         </div>
 
         {/* Mobile Toggle */}
-        <div className="flex md:hidden items-center gap-4">
+        <div className="flex lg:hidden items-center gap-4">
+          <ThemeToggle />
           <Link to="/cart" className="relative p-2">
-            <span 
-              className={isScrolled ? 'text-coffee-cream' : 'text-coffee-dark'} 
-            >Cart</span>
-            <span className="absolute -top-1 -right-1 bg-coffee-caramel text-coffee-cream text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full">
-              {itemCount}
-            </span>
+            <span className={`text-xl ${isScrolled ? 'text-coffee-cream' : 'text-coffee-dark'}`}>🛒</span>
+            {itemCount > 0 && (
+              <span className="absolute -top-1 -right-1 bg-coffee-caramel text-coffee-cream text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full">
+                {itemCount}
+              </span>
+            )}
           </Link>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -97,7 +118,7 @@ const Navbar = () => {
               isScrolled ? 'text-coffee-cream' : 'text-coffee-dark'
             }`}
           >
-            {isMobileMenuOpen ? <span>Close</span> : <span>Menu</span>}
+            {isMobileMenuOpen ? <span className="font-bold">×</span> : <span className="font-bold">☰</span>}
           </button>
         </div>
       </div>
