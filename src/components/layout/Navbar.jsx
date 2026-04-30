@@ -36,10 +36,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 w-full z-[999] transition-all duration-500 ${
         isScrolled 
-          ? 'bg-coffee-dark/95 backdrop-blur-md py-3 shadow-glass' 
-          : 'bg-transparent py-6'
+          ? 'bg-coffee-dark/95 backdrop-blur-md py-3 shadow-glass border-b border-coffee-mocha/20' 
+          : 'bg-coffee-dark/20 backdrop-blur-sm lg:bg-transparent py-6'
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
@@ -118,7 +118,7 @@ const Navbar = () => {
               isScrolled ? 'text-coffee-cream' : 'text-white'
             }`}
           >
-            {isMobileMenuOpen ? <span className="font-bold">×</span> : <span className="font-bold">☰</span>}
+            {isMobileMenuOpen ? <span className="text-2xl font-bold">×</span> : <span className="text-2xl font-bold">☰</span>}
           </button>
         </div>
       </div>
@@ -131,23 +131,42 @@ const Navbar = () => {
             initial="closed"
             animate="open"
             exit="closed"
-            className="md:hidden bg-coffee-dark overflow-hidden"
+            className="lg:hidden bg-coffee-dark/98 backdrop-blur-xl border-t border-coffee-mocha/30 h-screen w-full fixed top-[72px] left-0 overflow-y-auto"
           >
-            <div className="container mx-auto px-6 py-8 flex flex-col gap-6">
+            <div className="container mx-auto px-6 py-12 flex flex-col items-center gap-8">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.name}
                   custom={i}
                   variants={navItemVariants}
+                  className="w-full text-center"
                 >
                   <Link
                     to={link.path}
-                    className="text-2xl font-heading text-coffee-cream hover:text-coffee-caramel transition-colors"
+                    className={`text-3xl font-heading font-bold transition-colors block py-2 ${
+                      location.pathname === link.path ? 'text-coffee-caramel' : 'text-coffee-cream'
+                    } hover:text-coffee-caramel`}
                   >
                     {link.name}
                   </Link>
                 </motion.div>
               ))}
+              
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="mt-8 pt-8 border-t border-coffee-mocha/30 w-full flex justify-center gap-10"
+              >
+                <Link to="/menu" className="flex flex-col items-center gap-2">
+                   <span className="text-3xl">{favorites.length > 0 ? '❤️' : '🤍'}</span>
+                   <span className="text-xs text-coffee-beige uppercase tracking-widest">Favorites</span>
+                </Link>
+                <Link to="/cart" className="flex flex-col items-center gap-2">
+                   <span className="text-3xl">🛒</span>
+                   <span className="text-xs text-coffee-beige uppercase tracking-widest">Bag ({itemCount})</span>
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         )}
