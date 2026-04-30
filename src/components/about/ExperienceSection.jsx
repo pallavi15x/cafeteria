@@ -6,21 +6,21 @@ const experiences = [
     id: 1,
     title: 'Morning Calm',
     time: '☀️',
-    image: 'https://images.pexels.com/photos/1581384/pexels-photo-1581384.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://img.freepik.com/premium-photo/photo-coffee-shop-interior_1029469-17588.jpg',
     desc: 'The smell of fresh beans, the quiet hum of the city, and your first sip of the day. A sanctuary of morning peace.'
   },
   {
     id: 2,
     title: 'Evening Warmth',
     time: '🌆',
-    image: 'https://images.pexels.com/photos/1307698/pexels-photo-1307698.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://i.pinimg.com/originals/33/fb/eb/33fbebc0f37f3423b13ecbfb183f745f.jpg',
     desc: 'As the sun dips low, our space glows with a golden hue. The perfect backdrop for an evening wind-down.'
   },
   {
     id: 3,
     title: 'Date Night Vibes',
     time: '🌙',
-    image: 'https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://images.lifestyleasia.com/wp-content/uploads/sites/7/2025/09/25193025/best-date-night-places-in-bangalore-1.jpg',
     desc: 'Dim lighting, soft whispers, and romantic corners. Make memories over candlelight and our finest brews.'
   }
 ];
