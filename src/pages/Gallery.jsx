@@ -19,22 +19,22 @@ const galleryImages = [
   {
     id: 'd3', vibe: 'day', emoji: '☀️', tall: false,
     caption: 'Fresh brew, fresh start',
-    src: 'https://images.pexels.com/photos/1152739/pexels-photo-1152739.jpeg?auto=compress&cs=tinysrgb&w=800'
+    src: 'https://th.bing.com/th/id/OIP.cvyCXQdLO2pZ_w_8gwr7TAHaE8?w=272&h=181&c=7&r=0&o=7&dpr=1.7&pid=1.7&rm=3'
   },
   {
     id: 'd4', vibe: 'day', emoji: '☀️', tall: true,
     caption: 'Natural light, cozy vibes',
-    src: 'https://images.pexels.com/photos/2074130/pexels-photo-2074130.jpeg?auto=compress&cs=tinysrgb&w=800'
+    src: 'https://tse1.mm.bing.net/th/id/OIP.uyanEIfWAzVRkQQ2kIPf-wHaJ1?pid=ImgDet&w=192&h=254&c=7&dpr=1.7&o=7&rm=3'
   },
   {
     id: 'd5', vibe: 'day', emoji: '☀️', tall: false,
     caption: 'A table by the window',
-    src: 'https://images.pexels.com/photos/374547/pexels-photo-374547.jpeg?auto=compress&cs=tinysrgb&w=800'
+    src: 'https://static.vecteezy.com/system/resources/previews/057/833/122/non_2x/cozy-cafe-ambience-with-soft-light-and-natural-urban-view-through-the-window-photo.jpg'
   },
   {
-    id: 'd6', vibe: 'day', emoji: '☀️', tall: false,
+    id: 'd6', vibe: 'day', emoji: '☀️', tall: true,
     caption: 'Morning espresso ritual',
-    src: 'https://images.pexels.com/photos/2074122/pexels-photo-2074122.jpeg?auto=compress&cs=tinysrgb&w=800'
+    src: 'https://tse3.mm.bing.net/th/id/OIP.4bbavkoGmKfEAgKz0Qyf8AHaMc?pid=ImgDet&w=183&h=307&c=7&dpr=1.7&o=7&rm=3'
   },
 
   // 🌆 EVENING
@@ -46,54 +46,54 @@ const galleryImages = [
   {
     id: 'e2', vibe: 'evening', emoji: '🌆', tall: true,
     caption: 'Warm lights glow at dusk',
-    src: 'https://images.pexels.com/photos/1813466/pexels-photo-1813466.jpeg?auto=compress&cs=tinysrgb&w=800'
+    src: 'https://i.ytimg.com/vi/lEbCjqpKQKE/maxresdefault.jpg'
   },
   {
-    id: 'e3', vibe: 'evening', emoji: '🌆', tall: false,
+    id: 'e3', vibe: 'evening', emoji: '🌆', tall: true,
     caption: 'Window reflections, evening calm',
-    src: 'https://images.pexels.com/photos/2291367/pexels-photo-2291367.jpeg?auto=compress&cs=tinysrgb&w=800'
+    src: 'https://tse3.mm.bing.net/th/id/OIP.l-J2iKu7se33e__DGVC_TQAAAA?pid=ImgDet&w=187&h=333&c=7&dpr=1.7&o=7&rm=3'
   },
   {
     id: 'e4', vibe: 'evening', emoji: '🌆', tall: false,
     caption: 'Soft shadows, warm coffee',
-    src: 'https://images.pexels.com/photos/1251175/pexels-photo-1251175.jpeg?auto=compress&cs=tinysrgb&w=800'
+    src: 'https://images.stockcake.com/public/4/e/4/4e41758c-a647-4e42-8e16-545b26d4e2a1_large/cozy-autumn-evening-stockcake.jpg'
   },
   {
     id: 'e5', vibe: 'evening', emoji: '🌆', tall: true,
     caption: 'The perfect evening corner',
-    src: 'https://images.pexels.com/photos/3201764/pexels-photo-3201764.jpeg?auto=compress&cs=tinysrgb&w=800'
+    src: 'https://tse4.mm.bing.net/th/id/OIP.n3VJT3DMOUST3YMqmpkPPQAAAA?pid=ImgDet&w=187&h=334&c=7&dpr=1.7&o=7&rm=3'
   },
 
   // 🌙 DATE NIGHT
   {
     id: 'n1', vibe: 'night', emoji: '🌙', tall: true,
     caption: 'Candlelit table for two',
-    src: 'https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=800'
+    src: 'https://img.freepik.com/premium-photo/quota-candlelit-dinner-table-set-two-with-elegant-place-settingsquot_1168612-234900.jpg'
   },
   {
     id: 'n2', vibe: 'night', emoji: '🌙', tall: false,
     caption: 'Fairy lights, stolen glances',
-    src: 'https://images.pexels.com/photos/3887985/pexels-photo-3887985.jpeg?auto=compress&cs=tinysrgb&w=800'
+    src: 'https://assets-cdn.kathmandupost.com/uploads/source/news/2023/lifestyle/ttttttttttt-1676254297.jpg'
   },
   {
     id: 'n3', vibe: 'night', emoji: '🌙', tall: false,
     caption: 'Romantic corner, perfect date',
-    src: 'https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=800'
+    src: 'https://res.cloudinary.com/purnesh/image/upload/w_1080,f_auto/restaurants-date-night.jpg'
   },
   {
     id: 'n4', vibe: 'night', emoji: '🌙', tall: true,
     caption: 'Warm bulbs, soft music',
-    src: 'https://images.pexels.com/photos/2788489/pexels-photo-2788489.jpeg?auto=compress&cs=tinysrgb&w=800'
+    src: 'https://sofar-sounds-live.imgix.net/images/EventCollection-415-1.77777-1730321393436-image.jpg?fit=crop&crop=focalpoint&fp-x=0.5000&fp-y=0.5000&fp-z=1.000&ar=16:9&q=60'
   },
   {
     id: 'n5', vibe: 'night', emoji: '🌙', tall: false,
     caption: 'The city lights outside',
-    src: 'https://images.pexels.com/photos/1421903/pexels-photo-1421903.jpeg?auto=compress&cs=tinysrgb&w=800'
+    src: 'https://tse4.mm.bing.net/th/id/OIP.Shxmf_0Bl4fV-G-18BF2HAHaE7?pid=ImgDet&w=192&h=128&c=7&dpr=1.7&o=7&rm=3'
   },
   {
-    id: 'n6', vibe: 'night', emoji: '🌙', tall: false,
+    id: 'n6', vibe: 'night', emoji: '🌙', tall: true,
     caption: 'Dim light, deep conversations',
-    src: 'https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=800'
+    src: 'https://tse2.mm.bing.net/th/id/OIP.qgAfQV2eGMWzo2xhew9cqQAAAA?pid=ImgDet&w=195&h=292&c=7&dpr=1.7&o=7&rm=3'
   },
 ];
 
